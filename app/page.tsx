@@ -94,7 +94,7 @@ export default function Home() {
         <div key={i} className="flex">
           {row.map((col, j) => (
             <div
-              onTouchStart={() => {
+              onTouchMove={() => {
                 if (!grid[i][j]) {
                   const newGrid = [...grid];
                   newGrid[i][j] = colorCounter == 360 ? 1 : colorCounter;
@@ -103,56 +103,11 @@ export default function Home() {
                   setGrid(newGrid);
                 }
               }}
-              onTouchStartCapture={() => {
+              onMouseMove={() => {
                 if (!grid[i][j]) {
                   const newGrid = [...grid];
                   newGrid[i][j] = colorCounter == 360 ? 1 : colorCounter;
 
-                  setColorCounter(colorCounter == 360 ? 1 : colorCounter + 1);
-                  setGrid(newGrid);
-                }
-              }}
-              onTouchEndCapture={() => {
-                if (!grid[i][j]) {
-                  const newGrid = [...grid];
-                  newGrid[i][j] = colorCounter == 360 ? 1 : colorCounter;
-
-                  setColorCounter(colorCounter == 360 ? 1 : colorCounter + 1);
-                  setGrid(newGrid);
-                }
-              }}
-              onTouchEnd={() => {
-                if (!grid[i][j]) {
-                  const newGrid = [...grid];
-                  newGrid[i][j] = colorCounter == 360 ? 1 : colorCounter;
-
-                  setColorCounter(colorCounter == 360 ? 1 : colorCounter + 1);
-                  setGrid(newGrid);
-                }
-              }}
-              onMouseLeave={() => {
-                if (!grid[i][j]) {
-                  const newGrid = [...grid];
-                  newGrid[i][j] = colorCounter == 360 ? 1 : colorCounter;
-
-                  setColorCounter(colorCounter == 360 ? 1 : colorCounter + 1);
-                  setGrid(newGrid);
-                }
-              }}
-              onMouseDown={() => {
-                if (!grid[i][j]) {
-                  const newGrid = [...grid];
-
-                  newGrid[i][j] = colorCounter == 360 ? 1 : colorCounter;
-                  setColorCounter(colorCounter == 360 ? 1 : colorCounter + 1);
-                  setGrid(newGrid);
-                }
-              }}
-              onMouseEnter={() => {
-                if (!grid[i][j]) {
-                  const newGrid = [...grid];
-
-                  newGrid[i][j] = colorCounter == 360 ? 1 : colorCounter;
                   setColorCounter(colorCounter == 360 ? 1 : colorCounter + 1);
                   setGrid(newGrid);
                 }
