@@ -11,7 +11,7 @@ export default function Home() {
   useEffect(() => {
     setInterval(() => {
       setTime(!time);
-    }, 1);
+    }, 100);
   }, [start]);
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function Home() {
   useEffect(() => {
     const screenH = window.screen.height;
     const screenW = window.screen.width;
-    const cellSize = 30;
+    const cellSize = 10;
     const cols = Math.floor(screenW / cellSize);
     const rows = Math.floor(screenH / cellSize);
     const grid: number[][] = [];
