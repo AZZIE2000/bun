@@ -94,6 +94,15 @@ export default function Home() {
         <div key={i} className="flex">
           {row.map((col, j) => (
             <div
+            onTouchMove={() => {
+              if (!grid[i][j]) {
+                const newGrid = [...grid];
+                newGrid[i][j] = colorCounter == 360 ? 1 : colorCounter;
+
+                setColorCounter(colorCounter == 360 ? 1 : colorCounter + 1);
+                setGrid(newGrid);
+              }
+            }}
               onMouseLeave={() => {
                 if (!grid[i][j]) {
                   const newGrid = [...grid];
